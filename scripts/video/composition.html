@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>composition</title>
+<!-- Starter seek(t) composition. Copy it next to timeline.json and edit the scenes.
+     Contract used by render.mjs and dwell.mjs:
+       window.ready -> Promise<{ total }>   (load timeline, fonts, images)
+       window.seek(t)                       (set EVERY visual from t alone; no CSS transitions or timers)
+       window.CUES = [{ t, name, gain }]    (sound effects for mix.py, names = files in sfx/)
+     Pin motion to WORDS with W(lineId, "word"), never to hand-typed seconds: re-recording a line re-syncs everything.
+     Use the product's own fonts and colours so drawn scenes and real footage look like one film. -->
+<style>
+:root { --paper: #f3efe6; --ink: #1d1c1a; --accent: #1f5a3d; --hi: #bfe3a4; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--paper); }
+#stage { position: absolute; inset: 0; overflow: hidden; font-family: Georgia, serif; color: var(--ink); }
+.layer { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.big { font: 800 200px/0.9 Georgia, serif; letter-spacing: -.02em; }
+.kick { font: 700 72px/1.05 Georgia, serif; }
+.sub { font: 400 30px/1.35 "Courier New", monospace; color: #3b3832; }
+.credit { font: 400 22px/1.3 "Courier New", monospace; color: #4a463f; }
+.hl { position: absolute; background: var(--hi); mix-blend-mode: multiply; border-radius: 6px 10px 8px 12px; transform-origin: left center; }
+.phone { position: absolute; width: 465px; height: 973px; border-radius: 62px; background: #1d1c1a; }
+.screen { position: absolute; left: 14px; top: 14px; width: 437px; height: 945px; border-radius: 48px; overflow: hidden; background: #fff; }
+.screen img { width: 100%; height: 100%; object-fit: cover; }
+.cap { position: absolute; top: 1000px; transform: translateX(-50%); white-space: nowrap; font: 600 32px/1.25 Georgia, serif;
+       color: #f6f1e4; background: rgba(29,28,26,.84); padding: 6px 18px 8px; border-radius: 10px; }
+</style></head>
+<body><div id="stage"></div>
+<script>
+// ---------- helpers ----------
+let TL; const CUES = []; window.CUES = CUES;
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const E = { lin: (k) => k, io: (k) => k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2, out: (k) => 1 - Math.pow(1 - k, 3) };
+const P = (t, a, d = .5, e = E.io) => e(clamp((t - a) / d));              // 0..1 progress from time a over d seconds
+const seg = (id) => TL.segments.find((s) => s.id === id);
+const norm = (w) => w.toLowerCase().replace(/[^\p{L}\p{N}-]/gu, "");
+function W(id, word, nth = 0, end = false) {                              // time a word is spoken (nth occurrence)
+  let n = 0;
+  for (const w of seg(id).words) if (norm(w.w).startsWith(norm(word)) && n++ === nth) return end ? w.e : w.t;
+  throw new Error(`word "${word}" #${nth} not in line ${id}`);
+}
+const S = (id) => seg(id).t, SE = (id) => seg(id).end;
+const cue = (t, name, gain = 1) => CUES.push({ t: +t.toFixed(3), name, gain });
+const el = (tag, cls, parent, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; parent.appendChild(e); return e; };
+const css = (e, o) => Object.assign(e.style, o);
+const vis = (e, o) => { e.style.opacity = o; e.style.visibility = o <= 0.001 ? "hidden" : "visible"; };
+const on = (t, a, b, fi = .4, fo = .4) => Math.min(P(t, a, fi, E.lin), 1 - P(t, b - fo, fo, E.lin)); // visible a..b with fades
+
+// Screen recordings: extract frames once (ffmpeg -i clip.mp4 -vf fps=30 rec/<name>/%05d.jpg); a seek is an image swap.
+async function frame(img, dir, count, ct) {
+  const i = clamp(Math.round(ct * 30), 0, count - 1);
+  if (img.dataset.i == i) return; img.dataset.i = i;
+  img.src = `${dir}/${String(i + 1).padStart(5, "0")}.jpg`; await img.decode().catch(() => {});
+}
+
+const R = [];   // render functions: (t) => void | Promise
+async function build() {
+  TL = await (await fetch("timeline.json")).json();
+  const stage = document.getElementById("stage");
+  const first = TL.segments[0].id, last = TL.segments[TL.segments.length - 1].id;
+
+  // ===== Scene 1: a number inks in on the word that says it (edit the line id and word) =====
+  const L1 = el("div", "layer", stage);
+  const num = el("div", "abs big", L1, TL.segments[0].words[0].w); css(num, { left: "160px", top: "300px" });
+  const hl = el("div", "hl", L1); css(hl, { left: "150px", top: "440px", width: "900px", height: "70px" });
+  const sub = el("div", "abs sub", L1, TL.segments[0].text); css(sub, { left: "164px", top: "560px", width: "1500px" });
+  const tIn = TL.segments[0].words[0].t, tHl = TL.segments[0].words[Math.min(2, TL.segments[0].words.length - 1)].t;
+  cue(tHl - .05, "hl", .7);
+  R.push((t) => {
+    vis(L1, on(t, 0, SE(first) + .6));
+    num.style.transform = `translateY(${(1 - P(t, tIn - .2, .5, E.out)) * 30}px)`; vis(num, P(t, tIn - .2, .4, E.lin));
+    hl.style.transform = `scaleX(${P(t, tHl - .05, .5, E.out)})`;
+    vis(sub, P(t, tIn + .3, .5, E.lin));
+  });
+
+  // ===== Scene 2: product footage in a phone (replace with your recording frames) =====
+  const L2 = el("div", "layer", stage);
+  const phone = el("div", "phone", L2); css(phone, { left: "727px", top: "50px" });
+  const scr = el("div", "screen", phone); const img = el("img", "", scr);
+  const credit = el("div", "abs credit", L2, "Live product, real data"); css(credit, { left: "1250px", top: "860px" });
+  const a2 = S(TL.segments[Math.min(1, TL.segments.length - 1)].id);
+  R.push(async (t) => {
+    const o = on(t, a2 - .3, TL.total - 2.2); vis(L2, o);
+    if (o > 0) await frame(img, "rec/demo", 1, t - a2);   // set the folder and frame count of your clip
+  });
+
+  // ===== End card =====
+  const L3 = el("div", "layer", stage);
+  const name = el("div", "abs kick", L3, "Your product · your tagline"); css(name, { left: "160px", top: "420px" });
+  const url = el("div", "abs sub", L3, "live link · repo · data source and date"); css(url, { left: "164px", top: "540px" });
+  R.push((t) => vis(L3, P(t, SE(last) + .2, .5, E.lin)));
+
+  // ===== Captions (burned in, short cues); also upload srt.py's file =====
+  const cap = el("div", "cap", stage); const groups = [];
+  for (const s of TL.segments) { let cur = []; for (const w of s.words) { cur.push(w); const txt = cur.map((x) => x.w).join(" ");
+    if (txt.length >= 38 || /[.?!:]$/.test(w.w)) { groups.push(cur); cur = []; } } if (cur.length) groups.push(cur); }
+  const caps = groups.map((g, i) => ({ a: g[0].t, b: Math.min(g[g.length - 1].e + .25, i + 1 < groups.length ? groups[i + 1][0].t - .02 : 1e9), txt: g.map((x) => x.w).join(" ") }));
+  R.push((t) => { const c = caps.find((c) => t >= c.a && t < c.b); cap.style.visibility = c ? "visible" : "hidden";
+    if (c && cap.textContent !== c.txt) cap.textContent = c.txt; cap.style.left = "960px"; });
+
+  await document.fonts.ready;
+  CUES.sort((a, b) => a.t - b.t);
+}
+window.seek = async (t) => { for (const r of R) await r(t); };
+window.ready = build().then(() => ({ total: TL.total, cues: CUES.length }));
+</script></body></html>
