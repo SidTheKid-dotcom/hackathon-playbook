@@ -1,14 +1,16 @@
-# Phase 2: Scope
+# Phase 3: Scope
 
 Goal: one named user making one decision and taking one action, with a written cut list and a feature-stop time. "A small problem solved well beats a big one solved vaguely." "One feature that runs beats five that almost do."
 
 ## One user, one decision, one action
-Write three lines and keep them visible:
+Start from the ICP locked in Phase 1. Write three lines and keep them visible:
 - **User:** a specific person in a specific situation ("a housing-society committee member who just got a municipal notice").
 - **Decision:** what they must decide ("who should fix this, and what exactly was promised?").
 - **Action:** what they do in the product, ending in the real world (a letter sent, a list printed, a booking made).
 
-Then write the **outcome chain**: product use → action → real-world change → the track's core outcome. Check that every link in the chain is plausible and that none of it is overclaimed. The track's core outcome is the hero; put its key phrase in the first 15 s of video and the first line of the README.
+Then write the **outcome chain**: product use → action → real-world change → the track's core outcome. Check that every link is plausible and none of it is overclaimed.
+
+Check fit against the official track wording; make the track's core outcome the hero and put its key phrase in the first 15 s of video and first line of README.
 
 ## Choosing the lead user when there are several
 Score each candidate. Do not trust the first argument; the impact chain alone picks the wrong user.
@@ -24,7 +26,8 @@ Score each candidate. Do not trust the first argument; the impact chain alone pi
 
 Lead with one user. Give the others one line each in the video ("and ward officers get a check-first list").
 
-## Extra flows are supporting features, never the point
+## Supporting flows
+Extra user flows are supporting features, never the point.
 List every feature with the criterion it moves and its cost in hours. Keep only what moves a criterion per hour. Cut the rest into the "on hold" list with one line on why.
 
 ## "Are we too simple?"
