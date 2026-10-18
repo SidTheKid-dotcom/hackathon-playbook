@@ -1,4 +1,4 @@
-# Phase 6: Demo video
+# Phase 7: Demo video
 
 Goal: in the time limit, a judge who knows nothing learns the problem, the user, what the product does, where the sponsor's tech fits, and what changes in the world. The video is often the whole judgement; if it is not shown, it does not count.
 
@@ -39,11 +39,13 @@ Write the story and video script: problem before fix, real flow on real data, sp
 - **Motion lands on the word.** Show the matching picture at the same moment the narration says it. This had the largest effect of any multimedia principle tested (Mayer, temporal contiguity). Cut on stressed syllables, and let the voice lead into new sections slightly.
 - **Signal the essential thing**: one signature motion (for example a highlighter) marks what is being said, at the moment it is said.
 - **Cut anything decorative**: logo intros, transitions that call attention to themselves, music-only stretches.
-- **Mostly real footage** (default about 60%): the live product, recorded at 2× resolution with a scripted browser so every take is identical, plus real consoles and logs. Drawn scenes (problem, architecture, title and end cards) in the product's own visual style, so it all looks like one film. Never draw a fake product screen.
+- **Mostly real footage** (default about 60%): the live product, recorded at 2× resolution with a scripted browser so every take is identical, plus real consoles and logs. `scripts/video/record.py` records a headed browser on a virtual display with a smooth cursor and logs when each action happens. To show a coding agent using the product, run the agent for real in non-interactive mode, save its event log, and replay that log on screen with the label "replayed from its log". Drawn scenes (problem, architecture, title and end cards) in the product's own visual style, so it all looks like one film. Never draw a fake product screen.
 - Zoom in (1.5–2×) on the element being talked about. No wandering mouse, no real-time typing, no uncropped consoles, no text too small to read.
 - Show real outputs, trimmed and labelled "trimmed". A hand-written imitation of a log or API response looks mocked.
 - Every on-screen text stays fully readable for at least 0.5 s + 0.22 s per word (minimum 1.2 s). Sources and credits too.
-- Captions: always upload a caption file. If you burn them in, keep them short, at the bottom, and clear of the key area (centred under the phone during a phone demo).
+- Captions: always upload a caption file. If you burn them in, keep them short, at the bottom, and clear of the key area (centred under the phone during a phone demo). Build caption text from the **script**, aligned to the speech-to-text word times. Raw transcripts misspell product names and terms.
+- Do not put labels, tags or callouts on top of product footage the viewer must read. Zoom to the element and let the caption carry the words.
+- Video chapters: take the times from the voice timeline (the start of each line), not from scene detection. Soft fades hide cuts.
 
 ## 5. Voice and sound
 - **Voice, best first:** a team member's own recorded voice; then a clone of that voice; then a TTS voice. Judges reject fully AI-made work, and a clone mispronounces local names. Record one file per line on a phone, in a quiet room, at the same distance, with a pause before and after each line.

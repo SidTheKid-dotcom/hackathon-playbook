@@ -13,6 +13,9 @@ rec/<clip>/00001.jpg  screen-recording frames (ffmpeg -i clip.mp4 -vf fps=30 rec
 sfx/                  python3 sfx.py sfx <film_seconds>
 ```
 
+## Recording the real product
+`record.py takes.py` records a headed browser on a virtual display with ffmpeg (2880×1620 by default), with a smooth injected cursor and a JSON log of when each action happens. Write your takes in a small `takes.py`; see the header of `record.py`. Use the logged times to cut the clips to the narration.
+
 ## Steps
 ```bash
 K=~/.agents/skills/hackathon-playbook/scripts/video

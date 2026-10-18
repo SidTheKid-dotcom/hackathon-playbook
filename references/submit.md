@@ -1,4 +1,4 @@
-# Phase 7: Submit and freeze
+# Phase 8: Submit and freeze
 
 Goal: a complete, consistent submission well before the deadline, then a freeze. The video, repo, live link and form tell one story with the same numbers.
 
@@ -60,4 +60,7 @@ Build them from the README, so the facts stay identical. Answer exactly what eac
 ```
 
 ## Freeze
-After submitting: no pushes and no live changes during judging, unless the rules allow it. Scheduled jobs (nightly data runs) can still change live numbers; know that, and decide with the user whether to pause them. Keep the live link and any paid services running until results are out.
+Before the freeze, check that CI is green on the last pushed commit. A red mark on the repo page is the first thing a judge sees.
+
+After submitting: no pushes and no live changes during judging, unless the rules allow it.
+If the user decides to change something after the deadline anyway: docs only, no deploys, the full test suite run locally first. Tell the user that commit dates are public and judges can see them. A test that checks for placeholder text ("paste after upload") fails when you fill in the real value; update it in the same commit. Scheduled jobs (nightly data runs) can still change live numbers; know that, and decide with the user whether to pause them. Keep the live link and any paid services running until results are out.

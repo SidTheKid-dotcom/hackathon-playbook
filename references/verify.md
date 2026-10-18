@@ -1,4 +1,4 @@
-# Phase 5: Verify (and keep verifying)
+# Phase 6: Verify (and keep verifying)
 
 Goal: nothing false and nothing broken in anything a judge can see. Run this after every big batch of changes and again before submission, not only once.
 
@@ -12,7 +12,8 @@ Goal: nothing false and nothing broken in anything a judge can see. Run this aft
 - [ ] Same numbers everywhere, as of one stated date
 - [ ] Never-claim words absent everywhere, in every language
 - [ ] Public endpoints: inputs allow-listed, capped, least privilege
-- [ ] Secret scan clean (scripts/secret_scan.sh)
+- [ ] Secret scan clean, including personal emails (scripts/secret_scan.sh)
+- [ ] Full test suite green locally and in CI on the pushed commit
 - [ ] Every outside critique point checked against evidence
 ```
 
@@ -38,6 +39,12 @@ When a teammate, a friend or another AI reviews the work, answer point by point 
 - **Not an error**: why.
 
 Then rank the fixes by cost and deadline risk. Take the good ones without ego, and drop the wrong ones with reasons.
+
+## Independent auditor
+At least once a day, and before submission, start a fresh-context agent with the auditor prompt in templates.md. It reproduces every claim, tries adversarial inputs, scores the entry against the proxy rubric, and lists critical problems first. It does not fix anything.
+- Give the auditor no access to the builder's reasoning. Fresh context is the point.
+- Fix the critical items first, then the single biggest gap. Run the auditor again on the result.
+- Keep each report (`AUDIT<n>.md`) so scores can be compared over time.
 
 ## Security pass before going public
 Scan history and tracked files for secrets. Confirm the strategy files are not tracked. Check every public endpoint's permissions. Check storage buckets are not world-readable unless intended. Report findings that are not yours (an old public bucket in the same account) to the user, and let them decide; do not delete them yourself.

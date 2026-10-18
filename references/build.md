@@ -1,4 +1,4 @@
-# Phase 3: Build
+# Phase 4: Build
 
 Goal: the core flow working end to end on real data, where the judges will open it, before any extra. Then depth that the video can show. The stack comes from the event profile; the principles below hold for any stack.
 
@@ -34,6 +34,12 @@ This was the strongest engineering signal in our run, and judges increasingly pe
 - Pin third-party CI actions to full commit hashes. Never run fork code with secrets (for example GitHub's `pull_request_target`). Echo nothing secret: logs go public with the repo.
 - Every endpoint open to the public: allow-list its inputs, build any model prompt on the server from your own data, cap requests per day and concurrency, and give it least-privilege access. Check what it can delete or invoke, and narrow it.
 - A spend cap that actually stops spend (see setup.md).
+
+## Public demo guard (judges always get a result)
+- **Recorded presets:** the example buttons replay recorded real runs. They answer instantly, give the same result every time, and have no rate limit. An upstream outage or a rate limit at a data source cannot break them.
+- **Live path as an extra:** let users run their own input only on allow-listed sources, with a per-IP limit, a global concurrency limit and a timeout.
+- **Paid model calls:** a per-IP limit, a daily limit, and a spend cap that persists across restarts. When a limit is reached, fall back to a labelled rule-based path that uses the same tools. Never show a blank error.
+- Tell users what happened in one plain line ("Busy, try again in a minute"). Nobody is blocked for long.
 
 ## Tests that protect the honesty rules
 - A **data contract** check on what is published: every counted record has a source and a quote; review records carry a reason; totals agree.

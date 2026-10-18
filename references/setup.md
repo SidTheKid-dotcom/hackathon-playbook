@@ -1,4 +1,4 @@
-# Phase 1: Setup
+# Phase 2: Setup
 
 Goal: a clean start that cannot be disqualified, with the facts file and the riskiest unknown dealt with in the first hours.
 
@@ -17,11 +17,20 @@ Keep private agent docs out of the public repo via `.gitignore`. **Override when
   - a `docs/` folder that is safe to publish.
 - Check with `git status` that ignored paths really are ignored. A gitignore pattern like `docs/` (trailing slash) does not match a symlink; `/docs` does.
 
+## Memory files
+On day one, create `AGENTS.md`, `PROGRESS.md` and `LEARNINGS.md` from `templates.md`, gitignored. They let any agent continue the work in a new thread. Rules: memory.md.
+
 ## FACTS.md and the never-claim list
 Create these on day one, from `templates.md`.
-- `FACTS.md`: only verified, sourced facts (number, source URL, date read). The UI, README, form and video use only these, or live data.
+- Keep a `FACTS.md`: only verified, sourced facts, plus a "never claim" list. UI, README and video use only these. Record each fact with its source URL and the date read; the form uses only these or live data too.
 - Never-claim list: wording the data cannot support, for example "violated", "failed", "illegal", or a power or penalty with no source. Add to it whenever a near-miss happens.
 - When a number moves (a new data run, a corrected source), update `FACTS.md` first, then everything that quotes it.
+
+## Run the day-1 go/no-go gate
+Phase 1 wrote a concrete pass/fail gate and a fallback idea. Run the gate on schedule. If it fails, switch to the fallback the same day; do not argue with the result.
+
+## Build and audit the dataset early
+Pull the full dataset in the first hours. Re-measure every number that came from a sample.
 
 ## Test the riskiest unknown first
 List the 2–3 things that, if false, kill the plan. Test each in the first hours with a throwaway script, then delete the test. Examples:
@@ -41,4 +50,4 @@ List the 2–3 things that, if false, kill the plan. Test each in the first hour
 - Collect each person's contributions from the start (decisions, files, reviews). The "who did what" section is easier and more honest when it is written as you go.
 
 ## Done means
-The repo is safe to make public. `FACTS.md` exists. The riskiest unknown is tested, with a result. Spend is capped. Everyone knows what they own.
+The go/no-go gate passed (or you switched to the fallback). The repo is safe to make public. `FACTS.md` and the memory files exist. The riskiest unknown is tested, with a result. Spend is capped. Everyone knows what they own.
