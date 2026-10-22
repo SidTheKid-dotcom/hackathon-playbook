@@ -19,9 +19,23 @@ Read the official event page end to end: tracks and example problems, judging cr
 
 Write it all into `WINNING_PLAYBOOK.md` with citations. Then red-team it: check every citation, add missing links, mark unverified items.
 
+## Event type and medium
+**Event type** changes what is judged:
+- **Open hackathon:** the video and live link carry most of the score.
+- **Take-home or hiring challenge:** the repo is read closely, then reviewers question you. Code clarity, tests, a decision log and your defence of it outweigh video polish. Move video and form time to these.
+- **Sponsor challenge:** the sponsor's tech must do visible, irreplaceable work.
+
+**Medium and craft.** Name what the entry is made of (an app, a game, a 3D scene, hardware, a model, content, research). Then research, with sources:
+- what the best work in this craft does that average work does not (for example game feel and the first minute of play, or the hook in the first seconds of a post);
+- the tools and pipelines practitioners use, and which of them an agent can script (a 3D suite's Python API, a headless game-engine export, platform analytics and trend research);
+- where judges and audiences of this craft look first.
+
+Later phases apply their principles through this lens.
+
 ## Fields to fill (template in templates.md)
 | Field | Why it matters later |
 |---|---|
+| Event type, medium, craft notes and tools | Which phases get more time; which tools to install in setup |
 | Criteria, their wording, and estimated weights | Proxy score for every re-score; what the video must show |
 | Required artifacts: video (limit, host, visibility), repo (public? when?), live link, writeup fields, slides | Phase 8 checklist; the format limits under hard rule 4 |
 | Tech requirements: must use X; must be open source (which licences); offline or self-hostable; banned services; credits provided | **Sets the stack.** Overrides every default in build.md |

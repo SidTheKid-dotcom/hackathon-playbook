@@ -15,7 +15,12 @@ Goal: nothing false and nothing broken in anything a judge can see. Run this aft
 - [ ] Secret scan clean, including personal emails (scripts/secret_scan.sh)
 - [ ] Full test suite green locally and in CI on the pushed commit
 - [ ] Every outside critique point checked against evidence
+- [ ] Device paths tested by a person on real hardware (see below)
+- [ ] Major decisions rehearsed under questioning (submit.md, "Defend it")
 ```
+
+## Device and human paths
+Agents in a headless browser cannot test a microphone, camera, phone, controller, headset or speaker. List each such path and test it once with a person on the real device. Phones need HTTPS (a LAN address over plain HTTP blocks the mic and camera), and mobile browsers start the mic or audio only from a user tap. For content, show it to a few people from the target audience before you submit.
 
 ## Regression sweep
 Write a short script or checklist of every user flow that existed before the change (search, open a record, the main action, share, the secondary user's screen). Run it on the live site after each batch. When a check fails, find out whether it is the product or the test before fixing either: check the DOM or the data, not your assumption.

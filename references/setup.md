@@ -32,12 +32,13 @@ Phase 1 wrote a concrete pass/fail gate and a fallback idea. Run the gate on sch
 ## Build and audit the dataset early
 Pull the full dataset in the first hours. Re-measure every number that came from a sample.
 
-## Test the riskiest unknown first
-List the 2–3 things that, if false, kill the plan. Test each in the first hours with a throwaway script, then delete the test. Examples:
+## Test the riskiest unknown first (spikes)
+List the 2–3 things that, if false, kill the plan. Before testing each one, write a pass bar with a number (a latency, an accuracy, a success rate) and the fallback you will switch to if it fails. Then test it in the first hours and record `RESULT PASS/FAIL` with the measured numbers in `LEARNINGS.md`. When the risk is how parts fit together, run the spike on the real scaffold and keep it; otherwise use a throwaway script. Examples:
 - Can the deploy environment reach the data source? Some government sites block foreign or cloud IPs, or have broken TLS.
 - Does the model or API we need actually work on this account? Access forms, quotas and regional availability all differ.
+- Does the model behave as the design needs (calls the right action, in the right order) often enough?
 - Does the full dataset say what the sample said?
-- Is the required device or SDK available to the team?
+- Is the required device, SDK or tool available to the team, and can an agent drive it from a script? Check installs and licences for every tool the medium needs (event-profile.md).
 
 ## Money and access
 - Estimate the event's cost per service before the first big run. Re-check the estimate after the first real run.

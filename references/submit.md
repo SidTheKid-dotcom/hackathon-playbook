@@ -31,8 +31,11 @@ Give each person the same shape and roughly the same length: role, what they own
 ## Tone toward the sponsor
 Sponsor staff read the README, blog and form. Turn every friction into "what worked, plus one specific suggestion". Never "X blocked us" or "X refused".
 
+## Defend it
+Judges, reviewers and interviewers ask "why X, not Y". Keep a `DECISIONS.md` (template in templates.md) from the first big choice: one short record per decision a reviewer would question, not per choice. Before you submit, rehearse: have a fresh agent (the `grilling` skill, if installed) question you on each record and on the code. Turn each answer you cannot give into a fix, a test or an honest line under "What is not built". Questioning often finds real bugs.
+
 ## Going public (when the rules say)
-1. Scan for secrets (`scripts/secret_scan.sh`). Confirm no strategy files or `.env` files are tracked.
+1. Scan for secrets **before the first public push** (`DENY_TERMS='name|private-url' scripts/secret_scan.sh`). It covers commit messages too. Confirm no strategy files or `.env` files are tracked.
 2. Flip the visibility. Open the repo signed out.
 3. Optional polish: description, topics, website link, a release with the video attached, a social-preview image, and a plain `LICENSE` file so the host detects it (put data licences in a `NOTICE` file).
 4. Turn on branch protection once it is free, so no one pushes untested code during judging.

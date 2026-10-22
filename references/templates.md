@@ -6,6 +6,7 @@ Copy into the project and fill in. Delete rows that do not apply.
 - Winning playbook and idea shortlist (`WINNING_PLAYBOOK.md`)
 - Event profile (`JUDGING.md`)
 - FACTS.md
+- DECISIONS.md
 - Story and script table (`STORY.md`)
 - Claims sheet
 - README skeleton
@@ -51,6 +52,10 @@ Gaps (could not read): <...>
 ## Deadline
 Submission: <date time TZ>. Feature stop: <time>. Our early submit: <time>.
 
+## Event type and medium
+Type: <hackathon / take-home / sponsor challenge>. Medium: <...>.
+What wins in this craft: <...> (sources). Tools: <tool → job → scriptable? installed?>.
+
 ## Criteria (quoted) and estimated weights
 | Criterion | Exact wording | Weight (source: published / inferred / guess) | What must be on screen |
 
@@ -81,6 +86,17 @@ Target: <n>/30. Current: <n>/30, biggest gap: <...> (dated)
 
 ## Changed numbers log
 | Date | What changed | Old → new | Updated in (README/video/form/site) |
+```
+
+## DECISIONS.md
+```markdown
+# Decisions (only choices a reviewer would question)
+## D-<n>: <the choice, as a short claim>
+- Context: <the problem and the constraint that forced a choice>
+- Chosen: <X>, because <reason tied to a criterion or a measured result>
+- Rejected: <Y> (<why not>), <Z> (<why not>)
+- Evidence: <spike result, measurement, doc link, test>
+- Would change if: <the fact that would flip this decision>
 ```
 
 ## Story and script table (`STORY.md`)

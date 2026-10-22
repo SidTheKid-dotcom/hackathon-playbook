@@ -3,6 +3,8 @@
 # before making it public. Uses gitleaks if installed; always runs a pattern scan too.
 # Usage: bash secret_scan.sh [repo_dir] [extra private path patterns, e.g. "CLAUDE.md docs/ .agents/"]
 # EMAIL_ALLOW='regex' overrides the list of email addresses that are allowed in tracked files.
+# DENY_TERMS='regex' (case-insensitive) lists private terms (names, private URLs, client names) to find
+# in tracked files, all history and commit messages. Key patterns are also checked in commit messages.
 # Exit code 1 if anything is found.
 set -uo pipefail
 REPO="${1:-.}"; shift || true
@@ -25,6 +27,23 @@ if [ -n "$hits" ]; then
   found=1
 else
   echo "  no key patterns found"
+fi
+
+echo "== key patterns in commit messages"
+msg_hits=$(git log --all --format='%h %s%n%b' | grep -nE "$PAT" | head -10)
+if [ -n "$msg_hits" ]; then echo "$msg_hits" | cut -c1-40; echo "  ^ keys in commit messages need a history rewrite and a key rotation"; found=1; else echo "  none"; fi
+
+if [ -n "${DENY_TERMS:-}" ]; then
+  echo "== private terms (DENY_TERMS) in tracked files, history and commit messages"
+  d_files=$(git grep -I -n -i -E "$DENY_TERMS" -- . 2>/dev/null | cut -c1-160 | head -10)
+  d_msgs=$(git log --all --format='%h %s%n%b' | grep -i -E "$DENY_TERMS" | cut -c1-160 | head -10)
+  d_hist=$(git log --all --format=%h -i -G "$DENY_TERMS" 2>/dev/null | head -10 | tr '\n' ' ')
+  [ -n "$d_files" ] && { echo "  tracked files:"; echo "$d_files" | sed 's/^/    /'; found=1; }
+  [ -n "$d_msgs" ] && { echo "  commit messages:"; echo "$d_msgs" | sed 's/^/    /'; found=1; }
+  [ -n "$d_hist" ] && { echo "  diffs in commits: $d_hist"; found=1; }
+  [ -z "$d_files$d_msgs$d_hist" ] && echo "  none"
+else
+  echo "== private terms: skipped (set DENY_TERMS='name|private-url' to check names and links)"
 fi
 
 echo "== personal emails in tracked files (git author emails are not checked here)"

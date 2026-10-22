@@ -7,7 +7,7 @@ Goal: get more done in the time box without losing control of quality, cost or t
 |---|---|---|
 | Planner (orchestrator) | Reads the memory files, picks the next gap from the proxy score, writes task files, reviews results, merges, updates `PROGRESS.md` | Write large amounts of code itself; trust an executor's "done" without evidence |
 | Executor | Does one task from a task file in its own worktree, runs the test command, commits, reports evidence | Choose scope, push to main, deploy, change the public state |
-| Auditor | Reviews the whole entry with a fresh context and a fixed rubric (see verify.md) | Fix things; it only reports |
+| Auditor | Reviews each diff before merge, and the whole entry daily, with a fresh context and a fixed rubric (see verify.md) | Fix things; it only reports |
 
 Give each role to the model that is best at it **for this event**, and write the choice in `AGENTS.md`. Models and limits change; roles do not. When a provider limit is near, move the role to another model and keep working. Do not stop the event.
 
@@ -20,6 +20,8 @@ One file for each task, in a gitignored `tasks/` folder. Use the template in tem
 - a time limit.
 
 Size: one task fits in one agent session. If it does not, split it.
+
+Keep interfaces (message formats, data schemas, error codes) in one contract doc. Task files link to it and never restate it; restated contracts drift apart between parallel tasks.
 
 ## Parallel work
 - One git worktree per parallel task (`git worktree add ../<repo>-<task> -b <task>`). Executors never share a checkout.
@@ -41,6 +43,7 @@ Before the user leaves, write the plan for the night in `PROGRESS.md`. Schedule 
 
 ## Review discipline
 - Ask for evidence: test output, a screenshot, a live URL, a commit hash. "Done" without evidence is not done.
+- Before each merge, give the diff and its task file to a fresh-context auditor. Executors' own checks miss integration bugs (state lost on restart, a shutdown on the wrong event); a diff review catches them while they are cheap. Scale this down when time is short.
 - Run the **full** test suite before every push. CI runs everything; a subset that passes locally can still turn the public repo red.
 - After a batch of merges, run the regression sweep (verify.md) on the live URL.
 - Check commit authorship before each push (see setup.md). Executors can add their own author or co-author lines.

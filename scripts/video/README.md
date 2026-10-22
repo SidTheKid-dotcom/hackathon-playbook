@@ -18,7 +18,7 @@ sfx/                  python3 sfx.py sfx <film_seconds>
 
 ## Steps
 ```bash
-K=~/.agents/skills/hackathon-playbook/scripts/video
+K=<path-to-skill>/scripts/video          # for example ~/.claude/skills/hackathon-playbook/scripts/video
 python3 $K/align.py words                 # word times per line; listen to any line flagged CHECK
 python3 $K/timeline.py --limit 180        # lay lines on one clock -> timeline.json; prints total and margin
 python3 $K/sfx.py sfx 180                 # synthesized effects + optional music bed

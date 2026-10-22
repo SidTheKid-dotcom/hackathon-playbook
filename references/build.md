@@ -1,6 +1,6 @@
 # Phase 4: Build
 
-Goal: the core flow working end to end on real data, where the judges will open it, before any extra. Then depth that the video can show. The stack comes from the event profile; the principles below hold for any stack.
+Goal: the core flow working end to end on real data, where the judges will open it, before any extra. Then depth that the video can show. The stack and tools come from the event profile. The data, web and AI sections below are common cases; for a game, a 3D piece or content, apply the same principles (thin real path first, then depth; checkable output; nothing faked) with the craft's own tools.
 
 ## Order of work
 1. **Thinnest end-to-end path on real data first**: input → processing → output a user sees. Ugly is fine. Mocks are allowed only while building, labelled `MOCK` on screen and in file names, and deleted before the demo.
@@ -14,6 +14,7 @@ This was the strongest engineering signal in our run, and judges increasingly pe
 - Anything that fails goes to a **visible review state with a plain reason** ("Could not find this figure in the source"). It never counts toward totals and never triggers an action. Showing doubt is a feature, not an embarrassment.
 - If citations matter, add a **proof step** that re-fetches each cited source and confirms each quote is still there ("829 of 829 matched"). It makes a great video moment.
 - Measure accuracy on a small hand-checked set if time allows, and publish the real figure, whatever it is.
+- **When the model acts** (calls tools, moves UI, triggers effects), keep a small eval set: inputs → expected and forbidden actions. Report the rates and re-run them after each prompt or model change. Run evals one at a time; parallel runs hit rate limits and burn free credit that the demo needs.
 
 ## Batch work and data plumbing
 - Store inputs by content hash, so nothing is processed twice and every citation has a stable copy. Mirror the sources you cite, so judges can open them even when the original site is down.
@@ -23,7 +24,6 @@ This was the strongest engineering signal in our run, and judges increasingly pe
 
 ## Deploy and hosting
 - Deploy where the profile says: the sponsor's platform, a free host, or local only. If a live link is required, it opens signed out.
-- Live link that opens signed out on the sponsor's platform (when the rules ask for one).
 - Serve the simplest thing that works: static JSON on a CDN beats an API when the data fits in one file. Fewer moving parts during judging.
 - After every deploy, fetch the live URL and check the change is there. Rewrite rules and caches serve stale or wrong files.
 - Infrastructure as code, if the platform offers it. One command builds and tears everything down. It also makes a good proof shot.
