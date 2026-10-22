@@ -17,7 +17,7 @@ description: >-
   events. Not for everyday work that nobody judges.
 metadata:
   author: SidTheKid-dotcom
-  version: "2.2"
+  version: "2.3"
 ---
 # Hackathon playbook: from event page to submission
 
@@ -52,7 +52,7 @@ Goal: find one idea that is unique, impactful and buildable in the time box, the
 | # | Phase | Goal | Read | Gate: answer "yes" before moving on |
 |---|---|---|---|---|
 | 0 | Decode the game | Rules, judges, past winners and the craft become constraints | [event-profile.md](references/event-profile.md) | Can you list the criteria, required artifacts, required or banned tech, deadline with timezone, and what the sponsor wants shown? Do you know the medium, what wins in its craft, and its tools? Are judges and past winners researched, with checked citations, and is there a proxy score with a target? |
-| 1 | Ideas and lock | One unique, felt, buildable idea | [ideas.md](references/ideas.md) | Did the locked idea pass prior art, sponsor removal, the agentic test (if AI), demand and a real-data kill test? Is there one ICP, a fallback and a day-1 go/no-go gate? |
+| 1 | Ideas and lock | One unique, felt, buildable idea | [ideas.md](references/ideas.md) | Did the locked idea pass prior art, sponsor removal, the agentic test (if AI), demand and a real-data kill test? Were the baseline and reaction tests run and recorded (or skipped with a reason)? Is there one ICP, a fallback and a day-1 go/no-go gate? |
 | 2 | Setup | Repo, facts, first risk | [setup.md](references/setup.md) | Did the go/no-go gate pass (or did you switch to the fallback)? Is the riskiest unknown tested? Do `FACTS.md` and a never-claim list exist? Is paid spend capped? |
 | 3 | Scope | One user, one decision, one action | [scope.md](references/scope.md) | Can a stranger say who it is for and what they do in 10 seconds? Is there a written cut list and a feature-stop time? |
 | 4 | Build | One real flow end to end, then depth | [build.md](references/build.md) | Does the core flow run on real data where judges will open it? Can every output be traced and checked? |

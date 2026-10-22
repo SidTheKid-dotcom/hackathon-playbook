@@ -49,11 +49,14 @@ A real problem that nobody feels fails here.
 - Can public data actually prove the gap? Record pass or fail, with numbers.
 - **Prove it on the real thing.** When the problem lives inside a product people use (AI answers, apps, search results, platforms), capture that product's real output, not a stand-in. If logged-out access is blocked, sign up with the bot's own email when the user allows it, or ask the user to paste outputs.
 - **No strawman.** Test the strongest version (for example, prompts that tell the AI to "check every source"), so the gap is real.
+- **Baseline test (when the idea's value is information, answers or generated output):** do the user's real job with the strongest general AI assistant that has web search, using a careful prompt. Record what it gets right and wrong. Usually it does part of the job. Then name the gap it leaves (data it cannot reach, an action it cannot take, a check it cannot verify, a moment or workflow it does not fit) and build the idea around that gap. Kill the idea only if the assistant already does the whole job well. Keep the side-by-side result for the demo.
 
 ## Step 9. Red-team the survivors
-Check each one for: novelty, buildability, "obvious in hindsight", sponsor fit, named user and decision, ICP sharpness, and false-alarm risk.
+Check each one for: novelty, buildability, the reaction test below, sponsor fit, named user and decision, ICP sharpness, and false-alarm risk.
 
 **Niche check:** ask fresh AI agents for ideas the way a typical entrant would. Count how often yours appears. Ideas that agents suggest by default are crowded.
+
+**Reaction test (obvious in hindsight):** tell the one-line pitch to people from the ICP and stay quiet. Weigh what they say unprompted. Strong signals: "Why doesn't this exist already?", "This would be super helpful", "This would change how I do X", "This solves a burden I have" (ask when they last felt it; a real burden has a recent story). "Cool" with no story is politeness. Confusion, or "why would anyone want this?", is a warning. One strong reaction from a real ICP member outweighs many polite ones. If no real users are reachable in time, use fresh-context agents role-playing the ICP and label the result a proxy.
 
 ## Step 10. Lock
 - Score finalists on the proxy score from Phase 0. Lock one.
