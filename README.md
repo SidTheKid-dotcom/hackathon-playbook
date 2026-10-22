@@ -9,6 +9,16 @@ It gives the agent a direction, a structure and a working philosophy, not a scri
 - **Show evidence, not "done".** Tests that can fail, screenshots, measured numbers, live links.
 - **Defaults, not cages.** Every step has a reason. The agent scales the process to the request and the time left. Only seven hard rules never bend.
 
+## Set up with your agent
+
+Copy and paste this into your agent:
+
+```text
+Read https://raw.githubusercontent.com/SidTheKid-dotcom/hackathon-playbook/main/INSTALL.md and follow it to install the hackathon-playbook skill for me. Reuse an existing install if there is one, verify it loaded, then ask me for my event link.
+```
+
+Works with Claude Code, Cursor, Codex, OpenCode and other agents with a terminal. Prefer doing it yourself? See Install below.
+
 ## Install
 
 With the [skills CLI](https://github.com/vercel-labs/skills), for Claude Code, Codex, Cursor and other agents:
