@@ -21,7 +21,7 @@ Generate many candidates (aim for 50 to 150) through several lenses:
 - long-term problems that something recent made worse.
 
 ## Step 3. Prior-art sweep at shortlist time, not at the end
-For every shortlist idea, search GitHub, Product Hunt, Devpost, papers, X and the web for something that already does the core job. Name the closest tools and state exactly what yours does that they don't. If an existing tool does the core job, kill the idea now. Late prior-art finds waste whole rounds of work.
+For every shortlist idea, search GitHub, Product Hunt, Devpost, papers, X and the web for something that already does the core job. Name the closest tools and state exactly what yours does that they don't. If an existing tool does the core job, kill the idea now. Late prior-art finds waste whole rounds of work. Read your own demand sources as prior art too: posts about a pain often link or contain the fix people already use.
 
 ## Step 4. Shortlist a top 20
 One row per idea (template in templates.md): exact problem, who faces it and how many, recency evidence, who already solves it (from Step 3), data source, rubric fit, sponsor-removal result, the agent's decisions, citations.
@@ -49,7 +49,7 @@ A real problem that nobody feels fails here.
 - Can public data actually prove the gap? Record pass or fail, with numbers.
 - **Prove it on the real thing.** When the problem lives inside a product people use (AI answers, apps, search results, platforms), capture that product's real output, not a stand-in. If logged-out access is blocked, sign up with the bot's own email when the user allows it, or ask the user to paste outputs.
 - **No strawman.** Test the strongest version (for example, prompts that tell the AI to "check every source"), so the gap is real.
-- **Baseline test (when the idea's value is information, answers or generated output):** do the user's real job with the strongest general AI assistant that has web search, using a careful prompt. Record what it gets right and wrong. Usually it does part of the job. Then name the gap it leaves (data it cannot reach, an action it cannot take, a check it cannot verify, a moment or workflow it does not fit) and build the idea around that gap. Kill the idea only if the assistant already does the whole job well. Keep the side-by-side result for the demo.
+- **Baseline test (when the idea's value is information, answers or generated output):** do the user's real job with the strongest general AI assistant that has web search, using a careful prompt. Record what it gets right and wrong. Usually it does part of the job. Then name the gap it leaves (data it cannot reach, an action it cannot take, a check it cannot verify, a moment or workflow it does not fit) and build the idea around that gap. Kill the idea only if the assistant already does the whole job well. Keep the side-by-side result for the demo. The gap counts only if it is the user's real pain: "it is not wired into tool X" counts only when doing that step by hand is what hurts.
 
 ## Step 9. Red-team the survivors
 Check each one for: novelty, buildability, the reaction test below, sponsor fit, named user and decision, ICP sharpness, and false-alarm risk.
@@ -61,7 +61,8 @@ Check each one for: novelty, buildability, the reaction test below, sponsor fit,
 ## Step 10. Lock
 - Score finalists on the proxy score from Phase 0. Lock one.
 - Write down why the runner-up lost.
-- Keep a **fallback idea**.
+- Keep a **fallback idea that survives the most likely reason the gate fails**. If both ideas depend on the same access, platform or data, it is not a fallback.
+- If any test left a warning (score below target, a confused or negative reaction, a sponsor-removal doubt), lock only with one written line: what must be true for this idea to win, and the check and time that will show it. If you cannot write that line, reshape before you lock.
 - Write a **day-1 go/no-go gate**: a concrete pass/fail test (an accuracy number, or a proof that the gap exists on the full data) with a time. Phase 2 runs it; if it fails, switch to the fallback.
 
 ## Idea-stage gotchas

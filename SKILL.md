@@ -17,7 +17,7 @@ description: >-
   events. Not for everyday work that nobody judges.
 metadata:
   author: SidTheKid-dotcom
-  version: "2.3"
+  version: "2.4"
 ---
 # Hackathon playbook: from event page to submission
 
@@ -29,7 +29,7 @@ Goal: find one idea that is unique, impactful and buildable in the time box, the
 - **The event profile overrides any default** (stack, tools, hosting, repo layout, video format).
 
 ## How to use this skill
-- Find the current phase in the map below and read only that phase's reference file. Load files as each phase starts, not all at once.
+- At the start of a session, read the memory files first (see memory.md; create them from templates.md if they do not exist yet). Then find the current phase in the map below and read only that phase's reference file. Load files as each phase starts, not all at once.
 - When planning the whole event, do Phase 0 first; every later phase reads its profile. For a one-phase request ("write the README"), read only the facts that phase needs (limits, rubric, medium) and continue. If a `WINNING_PLAYBOOK.md` already exists, distil the profile from it instead of researching again.
 - If the team already has a locked idea, skip Phase 1, but still write the ICP, the fallback and the day-1 go/no-go gate.
 - Write project documents (profile, `FACTS.md`, story, plans) in the user's project, not in this skill folder.

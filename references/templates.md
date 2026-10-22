@@ -39,7 +39,8 @@ Team: <...>. Data: <...>. Conflict check: <done / n.a.>
 ## Lock
 Locked: <idea>, ICP: <group>, score <n>/30.
 Runner-up lost because: <...>
-Fallback: <idea>
+Fallback: <idea> (survives the gate failing because: <...>)
+Open warnings → bet → check by <time>: <... or "none">
 Day-1 go/no-go gate: <pass/fail test> by <time>
 ```
 

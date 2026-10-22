@@ -27,7 +27,7 @@ Create these on day one, from `templates.md`.
 - When a number moves (a new data run, a corrected source), update `FACTS.md` first, then everything that quotes it.
 
 ## Run the day-1 go/no-go gate
-Phase 1 wrote a concrete pass/fail gate and a fallback idea. Run the gate on schedule. If it fails, switch to the fallback the same day; do not argue with the result.
+Phase 1 wrote a concrete pass/fail gate and a fallback idea. Run the gate on schedule. If it fails, switch to the fallback the same day; do not argue with the result. Before switching, name the cause of the failure. If the cause is shared (no access, a platform outage, missing data), switching ideas fixes nothing: fix the blocker, or tell the user the entry is at risk.
 
 ## Build and audit the dataset early
 Pull the full dataset in the first hours. Re-measure every number that came from a sample.
