@@ -17,7 +17,7 @@ description: >-
   events. Not for everyday work that nobody judges.
 metadata:
   author: SidTheKid-dotcom
-  version: "2.4"
+  version: "2.5"
 ---
 # Hackathon playbook: from event page to submission
 
@@ -37,6 +37,7 @@ Goal: find one idea that is unique, impactful and buildable in the time box, the
 - Do the investigation yourself. Ask the user only for decisions that are theirs: scope, taste, wording, and anything public or hard to undo.
 - **Memory across threads:** keep `AGENTS.md`, `PROGRESS.md` and `LEARNINGS.md` in the project from day one. Read them at the start of every session; update them at the end. Switch to a new thread instead of stretching one. See [memory.md](references/memory.md).
 - **More than one agent, or work while the user is away:** see [orchestration.md](references/orchestration.md) for roles, task files, worktrees, long jobs and unattended rules.
+- **Decks, logos, title cards or any branded artifact:** read [brand.md](references/brand.md).
 - **Writing standard:** write agent files and status reports at about 80% of ASD-STE100 Simplified Technical English (one fact per sentence, active voice, one word for one thing). Write the README, form and narration plainly and factually, with no sales language.
 
 ## Hard rules (the only ones that never bend)
@@ -79,6 +80,7 @@ Idea-stage gotchas live in ideas.md.
 - **Safety filters read your own instructions too.** A banned-word filter and a prompt-injection filter blocked every legitimate output, because the system prompt mentioned the banned words. Filter outputs; test one case that must be blocked and one that must pass.
 - **An overflow audit misses overlap.** Elements on top of each other, clipped letter tails, a sticky bar hiding a button: only looking at screenshots catches these.
 - **Non-Latin scripts break layouts.** A tight line-height clips marks above and below; per-letter animations split joined characters. Test every language at the narrowest width.
+- **A slide tool's API may not set fonts or backgrounds.** Check before you plan. If it cannot, render slides as images.
 - **Find-and-replace in translations doubles phrases and breaks grammar.** Read every string afterwards.
 - **Sample statistics lie at scale.** "40% of files are scans" from a 25-file sample was 12 in 1,027 on the full set. Re-measure before you state it.
 - **Public numbers go stale.** A scheduled job changed totals after the README was written. Regenerate copy from the live source before you submit.

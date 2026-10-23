@@ -14,6 +14,11 @@ One complete run, kept so you can see the phases applied. **It is an example, no
 - **Tagline:** "Read the fine print before you pay the fine." Mission line: "Get waste processed where it's made."
 - **Team of 3:** one person on the build, one on problem and design, one on product and outcome. Claude Code was the coding partner, and the README disclosed it.
 
+## Identity
+Concept: "the citizen's red pen correcting the official's 'resolved'". Red meant only the citizen, on every slide.
+Real posts and city photos replaced stock; each source and licence went into `ASSETS.md`.
+Slides were rendered as images because the slide tool's API could not change fonts.
+
 ## Phase by phase: what we did
 | Phase | What we did | Lesson |
 |---|---|---|

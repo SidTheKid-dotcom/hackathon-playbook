@@ -9,6 +9,7 @@ Copy into the project and fill in. Delete rows that do not apply.
 - DECISIONS.md
 - Story and script table (`STORY.md`)
 - Claims sheet
+- Brand sheet
 - README skeleton
 - Who did what block
 - Form answer skeletons
@@ -113,6 +114,24 @@ Word budget: <limit − 10 s> × 2.3 = <n> words. Current: <n>.
 ## Claims sheet
 ```markdown
 | Claim | Where (file, timestamp, field) | Source | Number ok | Tense ok | Place ok | Picture ok | Checked by eye | Action |
+```
+
+## Brand sheet
+```markdown
+# <Project> identity
+Concept: <the problem's own material, in one line>
+| Hex | Meaning | Use |
+| #<hex> | <the user> | <accent, the one action, links> | (one row per colour)
+| Role | Font | Licence |
+| Display | <family> | <OFL> |
+| Body | <family> | <OFL> |
+| Mono | <family> | <OFL> |
+| <script> | <family> | <OFL> | (non-Latin only)
+Grid: <columns, gutter, outer margin at 1920×1080>
+Logo: <mark, clear space, minimum size, position>
+Textures: <one or two, and their limit>
+Images: <allowed sources, treatment, crops, "illustrative" label>
+Banned looks: <clichés this identity must never use>
 ```
 
 ## README skeleton

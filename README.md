@@ -62,7 +62,8 @@ The agent reads `SKILL.md`, finds the current phase, and loads only that phase's
 Also included:
 - `references/memory.md`: memory files that let any agent pick up the work in a new thread.
 - `references/orchestration.md`: one planner, many executor agents, and an auditor.
-- `references/templates.md`: event profile, `FACTS.md`, `DECISIONS.md`, README skeleton, task file and auditor prompt.
+- `references/templates.md`: event profile, `FACTS.md`, `DECISIONS.md`, brand sheet, README skeleton, task file and auditor prompt.
+- `references/brand.md`: visual identity for decks, logos and title cards: concept, brand sheet, real assets and tool limits.
 - `references/worked-example.md`: one complete run. It is an example, not a template.
 
 ## Optional scripts

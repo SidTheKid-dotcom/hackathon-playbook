@@ -36,6 +36,7 @@ Write the story and video script: problem before fix, real flow on real data, sp
 - Read it aloud with a timer before recording anything.
 
 ## 4. Picture
+- Title cards, lower thirds and colours come from the brand sheet in [brand.md](brand.md); do not invent a second palette.
 - **Motion lands on the word.** Show the matching picture at the same moment the narration says it. This had the largest effect of any multimedia principle tested (Mayer, temporal contiguity). Cut on stressed syllables, and let the voice lead into new sections slightly.
 - **Signal the essential thing**: one signature motion (for example a highlighter) marks what is being said, at the moment it is said.
 - **Cut anything decorative**: logo intros, transitions that call attention to themselves, music-only stretches.

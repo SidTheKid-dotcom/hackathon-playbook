@@ -1,6 +1,6 @@
 # Phase 5: UI and experience
 
-Goal: a stranger understands what it is, why it matters and what to do next within 5 seconds, and nothing breaks at any width, in any language, on the device users really use. This file is written for screens. For another medium, keep the goal and the habits (mockup, approval, then build; audit, then look by eye) and swap the checks for the craft's own first impression: a game's first minute, a post's first two seconds, a physical demo's first touch.
+Goal: a stranger understands what it is, why it matters and what to do next within 5 seconds, and nothing breaks at any width, in any language, on the device users really use. This file is written for screens. For another medium, keep the goal and the habits (mockup, approval, then build; audit, then look by eye) and swap the checks for the craft's own first impression: a game's first minute, a post's first two seconds, a physical demo's first touch. For a deck, logo or any branded artifact, read [brand.md](brand.md) for the identity.
 
 ## Mockup first, then code
 1. Write an image prompt (or sketch) per screen, at phone and desktop size, with real text from the data.
