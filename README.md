@@ -83,7 +83,7 @@ The "Defend it" step can use a grilling skill (one that questions you on each de
 
 ## Contributing
 
-Issues and pull requests are welcome. A good addition is a lesson that helps every future event. Write it as `what happened → do this instead → why`, and leave out product names. Keep `SKILL.md` short: put detail in the phase's reference file.
+Issues and pull requests are welcome. A good addition is a lesson that helps every future event. Write it as `what happened → do this instead → why`, and leave out product names. Keep `SKILL.md` short: put detail in the phase's reference file. [AGENTS.md](AGENTS.md) has the full guide and checks; coding agents read it automatically.
 
 ## License
 
