@@ -64,6 +64,7 @@ Also included:
 - `references/orchestration.md`: one planner, many executor agents, and an auditor.
 - `references/templates.md`: event profile, `FACTS.md`, `DECISIONS.md`, brand sheet, README skeleton, task file and auditor prompt.
 - `references/brand.md`: visual identity for decks, logos and title cards: concept, brand sheet, real assets and tool limits.
+- `references/wow-factor.md`: making the idea land: the winning moment, visible depth, the first 30 seconds and the live demo.
 - `references/worked-example.md`: one complete run. It is an example, not a template.
 
 ## Optional scripts
