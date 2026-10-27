@@ -17,7 +17,7 @@ description: >-
   events. Not for everyday work that nobody judges.
 metadata:
   author: SidTheKid-dotcom
-  version: "2.7"
+  version: "2.8"
 ---
 # Hackathon playbook: from event page to submission
 
