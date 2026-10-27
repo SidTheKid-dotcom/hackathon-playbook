@@ -83,4 +83,4 @@ Check voice vs screen mismatches, translations, mocked-looking output (label tri
 - Before any re-render, list the exact changes (add, replace, delete), with timestamps and the new estimated length. Get a "go".
 - Keep the previous render as a fallback until the new one passes the audits.
 - Re-render only the parts that changed, when the pipeline allows.
-- When people outside the team give feedback, take it seriously. Proxy judges are the closest thing to the real ones. But apply hard rule 2 to anything they suggest saying.
+- When people outside the team give feedback, take it seriously. Proxy judges are the closest thing to the real ones. Before the final render, a judge panel ([council.md](council.md)) can score the script or cut; it does not replace a person watching it. Apply hard rule 2 to anything they suggest saying.

@@ -46,7 +46,7 @@ python3 - <<'PY'
 import re;s=open('SKILL.md').read();d=re.search(r'description: >-\n(.*?)\nmetadata:',s,re.S).group(1)
 print('description chars:',len(' '.join(d.split())))
 PY
-grep -oE '\]\(([^)#]+\.md)' SKILL.md README.md references/*.md | sed 's/.*](//' | sort -u | while read f; do [ -e "$f" ] || [ -e "references/$f" ] || echo "BROKEN LINK: $f"; done
+grep -oE '\]\(([^)#]+\.md)' SKILL.md README.md references/*.md | sed 's/.*](//' | grep -v '^https\?:' | sort -u | while read f; do [ -e "$f" ] || [ -e "references/$f" ] || echo "BROKEN LINK: $f"; done
 bash -n scripts/*.sh scripts/video/*.sh && node --check scripts/ui_audit.mjs && python3 -m py_compile scripts/*.py scripts/video/*.py
 DENY_TERMS='<private terms, | separated>' bash scripts/secret_scan.sh . ".claude/ .env"
 ```
@@ -55,5 +55,5 @@ DENY_TERMS='<private terms, | separated>' bash scripts/secret_scan.sh . ".claude
 ## Git
 - This checkout may be linked into `~/.agents/skills/hackathon-playbook`. If so, every edit is live for every agent on this machine at once. Use a git worktree for experiments.
 - One idea per commit. Subject in the imperative, about 50 characters. The body lists the lessons and their source.
-- Use the owner's GitHub noreply identity. Follow the existing log for co-author lines.
+- Author and commit with the owner's GitHub noreply address, never a personal email. Add no `Co-Authored-By` trailers.
 - Ask the owner before you push, rewrite history, change repo settings or delete files.

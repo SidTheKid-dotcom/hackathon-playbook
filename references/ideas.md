@@ -59,7 +59,7 @@ Check each one for: novelty, buildability, the reaction test below, sponsor fit,
 **Reaction test (obvious in hindsight):** tell the one-line pitch to people from the ICP and stay quiet. Weigh what they say unprompted. Strong signals: "Why doesn't this exist already?", "This would be super helpful", "This would change how I do X", "This solves a burden I have" (ask when they last felt it; a real burden has a recent story). "Cool" with no story is politeness. Confusion, or "why would anyone want this?", is a warning. One strong reaction from a real ICP member outweighs many polite ones. If no real users are reachable in time, use fresh-context agents role-playing the ICP and label the result a proxy.
 
 ## Step 10. Lock
-- Score finalists on the proxy score from Phase 0. Lock one.
+- Score finalists on the proxy score from Phase 0. When time allows, run the idea lock council ([council.md](council.md)) on the top 2–3. Lock one.
 - Write down why the runner-up lost.
 - Keep a **fallback idea that survives the most likely reason the gate fails**. If both ideas depend on the same access, platform or data, it is not a fallback.
 - If any test left a warning (score below target, a confused or negative reaction, a sponsor-removal doubt), lock only with one written line: what must be true for this idea to win, and the check and time that will show it. If you cannot write that line, reshape before you lock.

@@ -30,7 +30,7 @@ Hard rule 3 still applies: if judging uses only the video, the video is the demo
 - Use all the judge time: the motivation, the hard part and what you had to solve.
 
 ## Gate
-Can you say the winning moment in one sentence? Does it appear by second 30? Would a tired judge on their 30th entry remember one image from this? Name it, and cut any feature that does not serve it.
+Can you say the winning moment in one sentence? Does it appear by second 30? Would a tired judge on their 30th entry remember one image from this? Name it, and cut any feature that does not serve it. Before the feature stop, run the wow check ([council.md](council.md)); put items flagged by 2 or more reviewers on the polish list.
 
 ## Sources
 Public advice from judges and winners, plus one failure at an event. Weigh the public advice; do not treat it as a rule.

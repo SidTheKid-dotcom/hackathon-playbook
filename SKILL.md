@@ -17,7 +17,7 @@ description: >-
   events. Not for everyday work that nobody judges.
 metadata:
   author: SidTheKid-dotcom
-  version: "2.6"
+  version: "2.7"
 ---
 # Hackathon playbook: from event page to submission
 
@@ -38,7 +38,7 @@ Goal: find one idea that is unique, impactful and buildable in the time box, the
 - **Memory across threads:** keep `AGENTS.md`, `PROGRESS.md` and `LEARNINGS.md` in the project from day one. Read them at the start of every session; update them at the end. Switch to a new thread instead of stretching one. See [memory.md](references/memory.md).
 - **More than one agent, or work while the user is away:** see [orchestration.md](references/orchestration.md) for roles, task files, worktrees, long jobs and unattended rules.
 - **Decks, logos, title cards or any branded artifact:** read [brand.md](references/brand.md).
-- **Making the idea land (the aha, visible depth, the first 30 seconds, live demo):** read [wow-factor.md](references/wow-factor.md) at idea lock, during build and before feature stop.
+- **Making the idea land (the aha, visible depth, the first 30 seconds, live demo):** read [wow-factor.md](references/wow-factor.md) at idea lock, during build and before feature stop. For independent reviewers at the idea lock, the video and the wow check, see [council.md](references/council.md).
 - **Writing standard:** write agent files and status reports at about 80% of ASD-STE100 Simplified Technical English (one fact per sentence, active voice, one word for one thing). Write the README, form and narration plainly and factually, with no sales language.
 
 ## Hard rules (the only ones that never bend)
