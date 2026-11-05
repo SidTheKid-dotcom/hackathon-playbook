@@ -32,6 +32,8 @@ git clone https://github.com/SidTheKid-dotcom/hackathon-playbook ~/.claude/skill
 git clone https://github.com/SidTheKid-dotcom/hackathon-playbook ~/.agents/skills/hackathon-playbook   # agents that read ~/.agents/skills
 ```
 
+To update later, run `git pull` inside that folder, or run `npx skills add` again.
+
 ## Use
 
 Talk to your agent normally. The skill triggers on requests like these:
