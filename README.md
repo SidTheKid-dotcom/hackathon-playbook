@@ -21,9 +21,10 @@ Works with Claude Code, Cursor, Codex, OpenCode and other agents with a terminal
 
 ## Install
 
-With the [skills CLI](https://github.com/vercel-labs/skills), for Claude Code, Codex, Cursor and other agents:
+With the [skills CLI](https://github.com/vercel-labs/skills), for Claude Code, Codex, Cursor and other agents. The npx skills path needs Node 22.20 or newer:
 ```bash
-npx skills add SidTheKid-dotcom/hackathon-playbook
+npx skills add SidTheKid-dotcom/hackathon-playbook        # this project
+npx skills add SidTheKid-dotcom/hackathon-playbook -g     # global
 ```
 
 Or by hand. Clone it into your agent's skills folder:
@@ -32,7 +33,7 @@ git clone https://github.com/SidTheKid-dotcom/hackathon-playbook ~/.claude/skill
 git clone https://github.com/SidTheKid-dotcom/hackathon-playbook ~/.agents/skills/hackathon-playbook   # agents that read ~/.agents/skills
 ```
 
-To update later, run `git pull` inside that folder, or run `npx skills add` again.
+For a git clone, run `git pull --ff-only` in that folder. For a skills CLI install, run `npx skills update hackathon-playbook`. If the agent loads skills only at session start, start a new session after installing or updating.
 
 ## Use
 
